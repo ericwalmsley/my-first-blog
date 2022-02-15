@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Eric's Blog</title>
+		<title>Shapes du Eric</title>
 	</head>
 	<body>
 		<header>
-			<h1><a href='/'>Important Title here</a></h1>
-			<h2>It's very very important</h2>
+			<h1><a href='/'>Shapes are Important</a></h1>
+			<h2>Muy Importante!</h2>
 		</header>
-		<p>Hi there</p>
-		<p>It works!</p>
 		<br>
 		<section>
-			<article>
-				<header>
-					<h3>This is a header within an article within a section</h3>
-				</header>
-				<p>This is where the text of an article might go</p>
-				<time>Published: [time]</time>
-			</article>
+			{% for post in posts %}
+				<article>
+					<time>Published: {{ post.published_date }}</time>
+					<h3> <a href="">{{ post.title }}</a></h3>
+					<p>{{ post.text|linebreaksbr }}</p>
+				</article>
+			{% endfor %}
 		</section>
 	</body>	
 </html>
